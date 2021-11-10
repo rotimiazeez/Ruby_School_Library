@@ -13,6 +13,10 @@ class Person
     of_age? || @parent_permission
   end
 
+  def validate_name
+    @name = @corrector.correct_name(@name)
+  end
+
   private
 
   def of_age?
