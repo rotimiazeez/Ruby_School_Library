@@ -1,5 +1,5 @@
-require './corrector'
-require './rental'
+require 'corrector'
+require 'rental'
 
 class Person
   attr_accessor :name, :age, :rentals
