@@ -1,4 +1,4 @@
-require 'rental'
+require_relative 'rental'
 
 class Book
   attr_accessor :title, :author, :rentals
@@ -11,5 +11,9 @@ class Book
 
   def add_rental(date, person)
     Rental.new(date, person, self)
+  end
+
+  def to_s
+    "Title: \"#{@title}\", Author: #{author}"
   end
 end
