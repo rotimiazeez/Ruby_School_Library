@@ -1,17 +1,27 @@
 require 'minitest/autorun'
 require_relative '../book'
-require 'yaml'
 
 describe '#new' do
   before :each do
-    @book = Book.new('title', 'author')
+    @book = Book.new('The Game of thrones', 'Martin G.G')
   end
 
-  it 'title' do
-    @book.title.eql? 'title'
+  it 'book is the instance of Book class' do
+    expect(@book).to be_instance_of Book
   end
 
-  it 'Author' do
-    @book.author.eql? 'author'
+  it 'has a title' do
+    title = @book.title
+    expect(title).to eql 'The Game of thrones'
+  end
+
+  it 'has an author' do
+    author = @book.author
+    expect(author).to eql 'Martin G.G'
+  end
+
+  it 'to string format' do
+    book_phrase = @book.to_s
+    expect(book_phrase).to eql 'Title: "The Game of thrones", Author: Martin G.G'
   end
 end
