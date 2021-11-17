@@ -1,17 +1,17 @@
 require 'minitest/autorun'
+require_relative '../book'
+require 'yaml'
 
-describe 'Book' do
-  before do
-    # Do nothing
+describe '#new' do
+  before :each do
+    @book = Book.new('title', 'author')
   end
 
-  after do
-    # Do nothing
+  it 'title' do
+    @book.title.eql? 'title'
   end
 
-  context 'when condition' do
-    it 'succeeds' do
-      skip 'Not implemented'
-    end
+  it 'Author' do
+    @book.author.eql? 'author'
   end
 end
