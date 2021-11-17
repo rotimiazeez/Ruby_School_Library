@@ -1,17 +1,12 @@
 require 'minitest/autorun'
-
+require_relative '../classroom'
 describe 'Classroom' do
   before do
-    # Do nothing
+    @classroom = Classroom.new 'label'
   end
-
-  after do
-    # Do nothing
-  end
-
-  context 'when condition' do
-    it 'succeeds' do
-      skip 'Not implemented'
+  context 'testing Classroom.label' do
+    it 'label' do
+      @classroom.label.eql? 'label'
     end
   end
 end
