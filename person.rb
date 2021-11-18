@@ -8,6 +8,7 @@ class Person
   DEFAULT_BOOL = true
 
   def initialize(age, name = 'Unknown', parent_permission = DEFAULT_BOOL)
+    @id = Random.rand(1..1000)
     @age = age
     @name = name
     @parent_permission = parent_permission
