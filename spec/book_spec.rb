@@ -25,3 +25,9 @@ describe '#new' do
     expect(book_phrase).to eql 'Title: "The Game of thrones", Author: Martin G.G'
   end
 end
+
+describe 'run tests so fast' do
+  it 'is a fast test', fast: true do
+    puts 'This test is fast!'
+  end
+end
