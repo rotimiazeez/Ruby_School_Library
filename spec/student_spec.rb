@@ -8,25 +8,25 @@ describe Student do
     @student = Student.new(21, fresher, 'Carlos')
   end
 
+  it 'is an instance of the class?' do
+    expect(@student).to be_instance_of Student
+  end
+
   it 'returns correct name' do
     name = @student.name
     expect(name).to eql 'Carlos'
   end
 
-  it 'returns id of student' do
-    id = @student.id
-    expect(id).to be_kind_of Numeric
+  it 'check if student is kind of Person' do
+    expect(@student).to be_kind_of Person
   end
 
-  describe '#classroom' do
-    it 'returns classroom of student' do
-      expect(@student.classroom.label).to eql 'Fresher'
-    end
+  it 'returns classroom of student' do
+    expect(@student.classroom.label).to eql 'Fresher'
   end
 
-  describe '#to_s' do
-    it 'returns student info' do
-      expect(@student.to_s).to be_kind_of String
-    end
+  it 'plays hooky' do
+    hooky_design = @student.play_hooky
+    expect(hooky_design).to eql "¯\(ツ)/¯"
   end
 end
