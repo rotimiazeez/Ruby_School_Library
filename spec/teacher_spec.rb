@@ -3,30 +3,28 @@ require_relative '../teacher'
 
 describe Teacher do
   before :each do
-    @teacher = Teacher.new(age: 34, specialization: 'Space travel', name: 'Ashley brown')
+    @teacher = Teacher.new(34, 'Space travel', 'ashley')
   end
 
-  describe '#name' do
-    it 'returns correct name' do
-      expect(@teacher.name).to eql 'Ashley brown'
-    end
+  it 'check if teacher is kind of Person' do
+    expect(@teacher).to be_kind_of Person
   end
 
-  describe '#id' do
-    it 'returns id of teacher' do
-      expect(@teacher.id).to be_kind_of Numeric
-    end
+  it 'returns correct name' do
+    teacher_name = @teacher.name
+    expect(teacher_name).to match 'ashley'
   end
 
-  describe '#can_use_services?' do
-    it 'returns boolean value' do
-      expect(@teacher.can_use_services?).to eql true
-    end
+  it 'returns validate name of teacher' do
+    validate_name = @teacher.validate_name
+    expect(validate_name).to match 'Ashley'
   end
 
-  describe '#to_s' do
-    it 'returns teacher info' do
-      expect(@teacher.to_s).to be_kind_of String
-    end
+  it 'returns boolean value' do
+    expect(@teacher.can_use_services?).to be true
+  end
+
+  it 'returns teacher info' do
+    expect(@teacher.to_s).to be_kind_of String
   end
 end
