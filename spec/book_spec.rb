@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative '../book'
 
-describe '#new' do
+describe Book do
   before :each do
     @book = Book.new('The Game of thrones', 'Martin G.G')
   end
