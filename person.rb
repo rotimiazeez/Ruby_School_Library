@@ -3,11 +3,14 @@ require_relative 'rental'
 
 class Person
   attr_accessor :name, :age, :rentals, :id
+  attr_reader :corrector, :parent_permission
 
-  def initialize(age:, name: 'Unknown', parent_permission: true)
+  DEFAULT_BOOL = true
+
+  def initialize(age, name = 'Unknown', parent_permission = DEFAULT_BOOL)
     @id = Random.rand(1..1000)
-    @name = name
     @age = age
+    @name = name
     @parent_permission = parent_permission
     @corrector = Corrector.new
     @rentals = []
@@ -25,13 +28,13 @@ class Person
     @name = @corrector.correct_name(@name)
   end
 
+  def to_s
+    "Name: #{@name}, ID: #{@id}, Age: #{@age}"
+  end
+
   private
 
   def of_age?
     @age >= 18
-  end
-
-  def to_s
-    "Name: #{@name}, ID: #{@id}, Age: #{@age}"
   end
 end
